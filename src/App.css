@@ -208,21 +208,23 @@ input[type="text"]:focus {
 /* Dashboard page */
 
 .dashboard ul {
-  height: 100%;
+  height: auto;
   max-height: 100%;
   width: 100%;
   position: relative;
   overflow: scroll;
 }
-.dashboard ul::-webkit-scrollbar{
+::-webkit-scrollbar{
   display: none;
 }
+
 .task.empty {
   color: var(--disabled_text);
   height: 60px;
 }
 .task {
   width: 100%;
+  min-width: 500px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -263,6 +265,9 @@ input[type="text"]:focus {
 
 .task input, .task textarea{
   width: 100%;
+}
+option{
+  color: #121212!important;
 }
 .task input, .task textarea, .task p, .task select {
   transition: color .2s ease;
@@ -322,9 +327,6 @@ textarea {
 }
 .task:not(.headers) button span {
   margin-left: 0!important;
-}
-::-webkit-scrollbar {
-  display: none;
 }
 .task.odd {
   background-color: #232323;
@@ -628,6 +630,7 @@ header h3 span, footer h3 span {
 .landing section:nth-child(5) .inside > div:first-child {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .text_container {
   width: 30%;
@@ -636,18 +639,21 @@ header h3 span, footer h3 span {
   width: 50%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  max-width: 416px;
 }
 .team_member_container {
   width: calc(50% - 8px);
   height: 25vh;
   margin-bottom: 72px;
 }
-.team_member_container:first-child,
-.team_member_container:nth-child(3) {
+.team_member_container{
+  max-width: 200px;
   margin-right: 8px;
 }
 .team_member_container img {
   width: 100%;
+  max-width: 200px;
   height: 100%;
 }
 
@@ -663,6 +669,25 @@ footer.landing .inside > div > div {
 footer.landing .inside > div > div span {
   margin-right: 8px;
 }
+@media screen and (max-width: 596px) {
+  ::-webkit-scrollbar {
+    display: block;
+    height: 4px;
+    width: 0px;
+    border: 1px solid var(--dark_grey);
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 2px;
+    background: var(--dark_grey);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background: var(--info);
+  }
+}
+
 
 
 @media screen and (max-width: 800px) {
