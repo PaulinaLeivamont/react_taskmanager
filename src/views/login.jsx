@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import useApp from "../context/use-app"
 
-const apiRoot = process.env.VITE_API 
+const apiRoot = "https://api-taskmanager.vercel.app/"
 
 const Login = () => {
 
